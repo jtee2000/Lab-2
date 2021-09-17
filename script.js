@@ -25,7 +25,7 @@ function filterData(category) {
     let filteredData = attractions.filter(data => {
         if (category === 'all') return true; 
         else return data.Category === category;
-    }).sort((a, b) => a.Visitors > b.Visitors).slice(0,5);
+    }).sort((a, b) => a.Visitors - b.Visitors).reverse().slice(0,5);
     renderBarChart(filteredData)
 }
 
